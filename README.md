@@ -1,28 +1,23 @@
 # A Question Answering Tool: "Where is the answer?" ("Cevap Nerede?")
 
-This project is my junior project at Yildiz Technical University Computer Engineering Department and its advised by Asst.Prof. M. Fatih Amasyalı.
-Basically this code compare the performances of some basic NLP methods on finding place of the answer. 
+This is a junior project at Yildiz Technical University Computer Engineering Department and advised by Assoc. Prof. M. Fatih Amasyalı.
+Basically, this tool finds the location of the sentence containing *the answer* of *given questions* and compares the performance results of some basic NLP methods. 
 According to results we discuss the performance of various methods. Which one is the most effective to find where is the answer on a text.
 
-We used Turkish Child Tales as test-set. This set contains 500 questions and 71 tales in different size and difficulties.
-According to this sets we implement very basic algorithms listed above.
+Test-set consists of Turkish Child Tales and contains 500 questions and 71 tales in different size and complexity.
 
 ## Methods
 ### Method 0: Select Randomly
-This is provement thesis for our hypothesis. At this method we select random sentences into text and returns as answer.
-This might be our base-line and we tried to improve within next methods.
+In this method, we randomly select sentences in the text and return these sentences in response. This method is our base-line, we tried to improve this results with the following methods.
 
 ### Method 1: Basic Word Sameness
-Counts same words in each sentences of text. The idea behind this method is "If a sentence contains same words with question it might be real answer."
+In this method, Common words between question-text and sentence texts are counted. The idea behind this method is "The more common words, the more likely the sentence is to be the answer to the given question.".
 
-### Method 2: First Six Characters Similarity
-Turkish is suffix based language most root words are contains 6 letter. Therefore we compare words within six letters.
-And the performance is getting more.
+### Method 2: Similarity of the First Six Characters
+Turkish is a suffix-based language which most root words contain 6 letter. Therefore we compare words within six letters. And the performance is getting more.
 
 ### Method 3: Constructing sentence vectors with FastText
-We decided to use fasttext to get word embeddings. We used wiki.tr (compiled by FastText team from Turkish Wikipedia) file as train set.
-When we got word embeddings,we constructed sentences as arithmetical average of words. First we created word vectors and then we sum all the words.
-Finally we calculated the arithmetic average to get average vector and this vector represents the whole sentence.
+We decided to use fasttext to get word embeddings. We used wiki.tr (compiled by FastText team from Turkish Wikipedia) file as train set. When we got word embeddings,we constructed sentences as arithmetical average of words. First we created word vectors and then we sum all the words. Finally we calculated the arithmetic average to get average vector and this vector represents the whole sentence.
 
 To find similarity between sentences and question we used cosine similarity. This method approaches sentences as atomic units.  
 
@@ -34,7 +29,6 @@ To increase performance we tried new method. In this method we approach words as
 
 ### Method 6: Constructing word vectors with FastText (using Euclidean Similarity)
 Uses similar with method5 algorithm to find word embeddings but this method use euclidean similarity to compare sentences.
-
 
 ## Contributors
 - *Berk Sudan*, [GitHub](https://github.com/berksudan), [LinkedIn](https://linkedin.com/in/berksudan/)
