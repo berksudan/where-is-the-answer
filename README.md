@@ -1,12 +1,13 @@
-# Where is the answer? (Cevap Nerede ?)
+# A Question Answering Tool: "Where is the answer?" ("Cevap Nerede?")
 
 This project is my junior project at Yildiz Technical University Computer Engineering Department and its advised by Asst.Prof. M. Fatih Amasyalı.
 Basically this code compare the performances of some basic NLP methods on finding place of the answer. 
 According to results we discuss the performance of various methods. Which one is the most effective to find where is the answer on a text.
 
-We used Turkish Child Stories as test set. This set contains 500 questions and 71 stories in different size and difficulties.
+We used Turkish Child Tales as test-set. This set contains 500 questions and 71 tales in different size and difficulties.
 According to this sets we implement very basic algorithms listed above.
 
+## Methods
 ### Method 0: Select Randomly
 This is provement thesis for our hypothesis. At this method we select random sentences into text and returns as answer.
 This might be our base-line and we tried to improve within next methods.
@@ -28,8 +29,14 @@ To find similarity between sentences and question we used cosine similarity. Thi
 ### Method 4: Jaccard Similarity
 We implemented jaccard similarity into words to find where is the answer.
 
-### Method 5: Constructing word vectors with FastText (cosine similarity)
+### Method 5: Constructing word vectors with FastText (using Cosine Similarity)
 To increase performance we tried new method. In this method we approach words as atomic unis of a text. We calculate similarity of question and sentence texts using cosine similarity.
 
-### Method 6: Constructing word vectors with FastText (euclidean similarity)
-Uses similar with method5 algorithm to find word embeddings but this method use euclidean similarity to compare sentences. 
+### Method 6: Constructing word vectors with FastText (using Euclidean Similarity)
+Uses similar with method5 algorithm to find word embeddings but this method use euclidean similarity to compare sentences.
+
+
+## Contributors
+- *Berk Sudan*, [GitHub](https://github.com/berksudan), [LinkedIn](https://linkedin.com/in/berksudan/)
+- *Burak Tahtacı*, [GitHub](http://buraktahtaci.com/contact),  [LinkedIn](https://linkedin.com/in/tahtaciburak)
+
