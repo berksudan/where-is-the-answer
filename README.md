@@ -10,25 +10,25 @@ Test-set consists of Turkish Child Tales and contains 500 questions and 71 tales
 ### Method 0: Select Randomly
 In this method, we randomly select sentences in the text and return these sentences in response. This method is our base-line, we tried to improve this results with the following methods.
 
-### Method 1: Basic Word Sameness
+### Method 1: Basic Word Equality
 In this method, Common words between question-text and sentence texts are counted. The idea behind this method is "The more common words, the more likely the sentence is to be the answer to the given question.".
 
 ### Method 2: Similarity of the First Six Characters
-Turkish is a suffix-based language which most root words contain 6 letter. Therefore we compare words within six letters. And the performance is getting more.
+Turkish is an agglutinating language which most of the word stems contain 6 character at most. Therefore we compare words with their first six characters. So, the performance has increased.
 
 ### Method 3: Constructing sentence vectors with FastText
-We decided to use fasttext to get word embeddings. We used wiki.tr (compiled by FastText team from Turkish Wikipedia) file as train set. When we got word embeddings,we constructed sentences as arithmetical average of words. First we created word vectors and then we sum all the words. Finally we calculated the arithmetic average to get average vector and this vector represents the whole sentence.
+In this method, we decided to use FastText to extract word embeddings. We used wiki.tr (compiled by FastText team from Turkish Wikipedia) file as train set. When we have word embeddings, we treat sentences as arithmetic mean of the defined words. First, we created word vectors and then summed all the word vectors. Finally, we calculated the arithmetic mean to obtain the average vector which represents the whole sentence.
 
-To find similarity between sentences and question we used cosine similarity. This method approaches sentences as atomic units.  
+To find similarity between sentences and question, we used cosine similarity. This method sees sentences as atomic units.  
 
 ### Method 4: Jaccard Similarity
-We implemented jaccard similarity into words to find where is the answer.
+In this method, Wwe added a jaccard similarity operation to locate the answer in text.
 
 ### Method 5: Constructing word vectors with FastText (using Cosine Similarity)
-To increase performance we tried new method. In this method we approach words as atomic unis of a text. We calculate similarity of question and sentence texts using cosine similarity.
+In this method, we use words as atomic units of a text. We calculate similarity of question and sentence texts using cosine similarity.
 
 ### Method 6: Constructing word vectors with FastText (using Euclidean Similarity)
-Uses similar with method5 algorithm to find word embeddings but this method use euclidean similarity to compare sentences.
+In this method, a module is implemented to find word embeddings, similar to method 5, along with the euclidean similarity metric to compare sentences.
 
 ## Contributors
 - *Berk Sudan*, [GitHub](https://github.com/berksudan), [LinkedIn](https://linkedin.com/in/berksudan/)
